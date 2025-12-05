@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`EmptyState Component Snapshots should match snapshot with all props 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "padding": 20,
+        "paddingVertical": 64,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      {
+        "fontSize": 64,
+        "marginBottom": 16,
+      }
+    }
+  >
+    🎉
+  </Text>
+  <Text
+    style={
+      {
+        "color": "#666666",
+        "fontSize": 18,
+        "fontWeight": "600",
+        "marginBottom": 8,
+        "textAlign": "center",
+      }
+    }
+  >
+    Title
+  </Text>
+  <Text
+    style={
+      {
+        "color": "#999999",
+        "fontSize": 14,
+        "marginBottom": 16,
+        "textAlign": "center",
+      }
+    }
+  >
+    Subtitle
+  </Text>
+  <View
+    style={
+      {
+        "marginTop": 12,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="Action"
+      accessibilityRole="button"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#4CAF50",
+          "borderRadius": 8,
+          "elevation": 2,
+          "flexDirection": "row",
+          "gap": 8,
+          "justifyContent": "center",
+          "minHeight": 44,
+          "opacity": 1,
+          "paddingHorizontal": 16,
+          "paddingVertical": 8,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 1,
+            "width": 0,
+          },
+          "shadowOpacity": 0.1,
+          "shadowRadius": 2,
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+            {
+              "color": "#FFFFFF",
+            },
+            {
+              "fontSize": 16,
+            },
+            false,
+            undefined,
+          ]
+        }
+      >
+        Action
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`EmptyState Component Snapshots should match snapshot with minimal props 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "padding": 20,
+        "paddingVertical": 64,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#666666",
+        "fontSize": 18,
+        "fontWeight": "600",
+        "marginBottom": 8,
+        "textAlign": "center",
+      }
+    }
+  >
+    Title
+  </Text>
+</View>
+`;

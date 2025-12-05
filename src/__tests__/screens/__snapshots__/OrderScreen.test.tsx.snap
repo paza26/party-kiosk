@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`OrderScreen Snapshots should match snapshot for initial state 1`] = `
+<View
+  accessibilityLabel="Caricamento ordini..."
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <ActivityIndicator
+    color="#4CAF50"
+    size="large"
+  />
+  <Text
+    style={
+      {
+        "color": "#666666",
+        "fontSize": 14,
+        "marginTop": 12,
+        "textAlign": "center",
+      }
+    }
+  >
+    Caricamento ordini...
+  </Text>
+</View>
+`;
