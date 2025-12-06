@@ -23,6 +23,3 @@ yarn-error.log*
 
 # Test coverage
 coverage/
-
-# Claude AI configuration
-.claude/
