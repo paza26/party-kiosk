@@ -6,28 +6,28 @@ import { COLORS } from '../../constants/theme';
 describe('Loading Component', () => {
   describe('Rendering', () => {
     it('should render activity indicator', () => {
-      const { getByAccessibilityLabel } = render(<Loading />);
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      const { getByLabelText } = render(<Loading />);
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should render with default size (large)', () => {
-      const { getByAccessibilityLabel } = render(<Loading />);
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      const { getByLabelText } = render(<Loading />);
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should render with small size', () => {
-      const { getByAccessibilityLabel } = render(<Loading size="small" />);
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      const { getByLabelText } = render(<Loading size="small" />);
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should use default color (primary)', () => {
-      const { getByAccessibilityLabel } = render(<Loading />);
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      const { getByLabelText } = render(<Loading />);
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should accept custom color', () => {
-      const { getByAccessibilityLabel } = render(<Loading color="#FF0000" />);
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      const { getByLabelText } = render(<Loading color="#FF0000" />);
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
   });
 
@@ -43,92 +43,92 @@ describe('Loading Component', () => {
     });
 
     it('should use text as accessibility label', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading text="Loading products" />
       );
-      expect(getByAccessibilityLabel('Loading products')).toBeTruthy();
+      expect(getByLabelText('Loading products')).toBeTruthy();
     });
   });
 
   describe('Layout Modes', () => {
     it('should not be full screen by default', () => {
-      const { getByAccessibilityLabel } = render(<Loading />);
-      const container = getByAccessibilityLabel('Loading').parent;
+      const { getByLabelText } = render(<Loading />);
+      const container = getByLabelText('Loading').parent;
       expect(container).toBeTruthy();
     });
 
     it('should render in full screen mode', () => {
-      const { getByAccessibilityLabel } = render(<Loading fullScreen />);
-      const container = getByAccessibilityLabel('Loading').parent;
+      const { getByLabelText } = render(<Loading fullScreen />);
+      const container = getByLabelText('Loading').parent;
       expect(container).toBeTruthy();
     });
 
     it('should render with text in full screen mode', () => {
-      const { getByText, getByAccessibilityLabel } = render(
+      const { getByText, getByLabelText } = render(
         <Loading fullScreen text="Loading..." />
       );
       expect(getByText('Loading...')).toBeTruthy();
-      expect(getByAccessibilityLabel('Loading...')).toBeTruthy();
+      expect(getByLabelText('Loading...')).toBeTruthy();
     });
   });
 
   describe('Custom Styles', () => {
     it('should apply custom styles', () => {
       const customStyle = { padding: 40 };
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading style={customStyle} />
       );
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should merge custom styles with default styles', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading style={{ backgroundColor: 'red' }} />
       );
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
   });
 
   describe('Accessibility', () => {
     it('should have accessibility label', () => {
-      const { getByAccessibilityLabel } = render(<Loading />);
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      const { getByLabelText } = render(<Loading />);
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should use custom text as accessibility label', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading text="Fetching orders" />
       );
-      expect(getByAccessibilityLabel('Fetching orders')).toBeTruthy();
+      expect(getByLabelText('Fetching orders')).toBeTruthy();
     });
 
     it('should be accessible in full screen mode', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading fullScreen text="Please wait" />
       );
-      expect(getByAccessibilityLabel('Please wait')).toBeTruthy();
+      expect(getByLabelText('Please wait')).toBeTruthy();
     });
   });
 
   describe('Size and Color Combinations', () => {
     it('should render small size with custom color', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading size="small" color="#00FF00" />
       );
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should render large size with custom color', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading size="large" color="#0000FF" />
       );
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
   });
 
   describe('Complex Configurations', () => {
     it('should handle all props together', () => {
-      const { getByText, getByAccessibilityLabel } = render(
+      const { getByText, getByLabelText } = render(
         <Loading
           size="small"
           color="#FF00FF"
@@ -138,35 +138,35 @@ describe('Loading Component', () => {
         />
       );
       expect(getByText('Processing...')).toBeTruthy();
-      expect(getByAccessibilityLabel('Processing...')).toBeTruthy();
+      expect(getByLabelText('Processing...')).toBeTruthy();
     });
 
     it('should work with theme colors', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Loading color={COLORS.primary} />
       );
-      expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should work with different theme colors', () => {
       const colors = [COLORS.primary, COLORS.error, COLORS.success, COLORS.info];
 
       colors.forEach((color) => {
-        const { getByAccessibilityLabel } = render(
+        const { getByLabelText } = render(
           <Loading color={color} />
         );
-        expect(getByAccessibilityLabel('Loading')).toBeTruthy();
+        expect(getByLabelText('Loading')).toBeTruthy();
       });
     });
   });
 
   describe('Edge Cases', () => {
     it('should handle empty text string', () => {
-      const { queryByText, getByAccessibilityLabel } = render(
+      const { queryByText, getByLabelText } = render(
         <Loading text="" />
       );
       expect(queryByText('')).toBeNull();
-      expect(getByAccessibilityLabel('')).toBeTruthy();
+      expect(getByLabelText('Loading')).toBeTruthy();
     });
 
     it('should handle very long text', () => {

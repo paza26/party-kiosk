@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AppProvider } from '../../context/AppContext';
 import { Product, Order, OrderItem } from '../../types';
 
@@ -11,7 +12,11 @@ export function renderWithProviders(
   options?: Omit<RenderOptions, 'wrapper'>
 ) {
   const Wrapper = ({ children }: { children: React.ReactNode }) => {
-    return <AppProvider>{children}</AppProvider>;
+    return (
+      <SafeAreaProvider>
+        <AppProvider>{children}</AppProvider>
+      </SafeAreaProvider>
+    );
   };
 
   return render(ui, { wrapper: Wrapper, ...options });

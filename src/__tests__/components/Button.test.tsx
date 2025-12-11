@@ -62,20 +62,20 @@ describe('Button Component', () => {
 
   describe('Loading State', () => {
     it('should show loading indicator when loading', () => {
-      const { getByAccessibilityLabel, queryByText } = render(
+      const { getByLabelText, queryByText } = render(
         <Button title="Test" loading />
       );
-      expect(getByAccessibilityLabel('Test, Loading')).toBeTruthy();
+      expect(getByLabelText('Test, Loading')).toBeTruthy();
       expect(queryByText('Test')).toBeNull();
     });
 
     it('should be disabled when loading', () => {
       const onPress = jest.fn();
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Button title="Test" loading onPress={onPress} />
       );
 
-      const button = getByAccessibilityLabel('Test, Loading');
+      const button = getByLabelText('Test, Loading');
       fireEvent.press(button);
 
       expect(onPress).not.toHaveBeenCalled();
@@ -108,11 +108,11 @@ describe('Button Component', () => {
     });
 
     it('should have disabled accessibility state', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Button title="Test" disabled />
       );
 
-      const button = getByAccessibilityLabel('Test');
+      const button = getByLabelText('Test');
       expect(button.props.accessibilityState.disabled).toBe(true);
     });
   });
@@ -141,11 +141,11 @@ describe('Button Component', () => {
 
     it('should not trigger onPress when both disabled and loading', () => {
       const onPress = jest.fn();
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Button title="Test" disabled loading onPress={onPress} />
       );
 
-      fireEvent.press(getByAccessibilityLabel('Test, Loading'));
+      fireEvent.press(getByLabelText('Test, Loading'));
 
       expect(onPress).not.toHaveBeenCalled();
     });
@@ -214,51 +214,51 @@ describe('Button Component', () => {
     });
 
     it('should use title as accessibility label by default', () => {
-      const { getByAccessibilityLabel } = render(<Button title="Click Me" />);
-      expect(getByAccessibilityLabel('Click Me')).toBeTruthy();
+      const { getByLabelText } = render(<Button title="Click Me" />);
+      expect(getByLabelText('Click Me')).toBeTruthy();
     });
 
     it('should use custom accessibility label when provided', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Button title="Test" accessibilityLabel="Custom Label" />
       );
-      expect(getByAccessibilityLabel('Custom Label')).toBeTruthy();
+      expect(getByLabelText('Custom Label')).toBeTruthy();
     });
 
     it('should append "Loading" to accessibility label when loading', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Button title="Submit" loading />
       );
-      expect(getByAccessibilityLabel('Submit, Loading')).toBeTruthy();
+      expect(getByLabelText('Submit, Loading')).toBeTruthy();
     });
 
     it('should have correct accessibility state when enabled', () => {
-      const { getByAccessibilityLabel } = render(<Button title="Test" />);
-      const button = getByAccessibilityLabel('Test');
+      const { getByLabelText } = render(<Button title="Test" />);
+      const button = getByLabelText('Test');
       expect(button.props.accessibilityState.disabled).toBeFalsy();
     });
 
     it('should have correct accessibility state when disabled', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Button title="Test" disabled />
       );
-      const button = getByAccessibilityLabel('Test');
+      const button = getByLabelText('Test');
       expect(button.props.accessibilityState.disabled).toBe(true);
     });
 
     it('should have correct accessibility state when loading', () => {
-      const { getByAccessibilityLabel } = render(
+      const { getByLabelText } = render(
         <Button title="Test" loading />
       );
-      const button = getByAccessibilityLabel('Test, Loading');
+      const button = getByLabelText('Test, Loading');
       expect(button.props.accessibilityState.disabled).toBe(true);
     });
   });
 
   describe('Edge Cases', () => {
     it('should handle empty title', () => {
-      const { getByAccessibilityLabel } = render(<Button title="" />);
-      expect(getByAccessibilityLabel('')).toBeTruthy();
+      const { getByLabelText } = render(<Button title="" />);
+      expect(getByLabelText('')).toBeTruthy();
     });
 
     it('should handle very long title', () => {
@@ -292,10 +292,10 @@ describe('Button Component', () => {
       });
 
       it(`should render ${variant} variant when loading`, () => {
-        const { getByAccessibilityLabel } = render(
+        const { getByLabelText } = render(
           <Button title="Test" variant={variant} loading />
         );
-        expect(getByAccessibilityLabel('Test, Loading')).toBeTruthy();
+        expect(getByLabelText('Test, Loading')).toBeTruthy();
       });
 
       it(`should render ${variant} variant with fullWidth`, () => {

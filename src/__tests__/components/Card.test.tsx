@@ -242,8 +242,8 @@ describe('Card Component', () => {
 
   describe('Edge Cases', () => {
     it('should render with empty children', () => {
-      const { container } = render(<Card>{''}</Card>);
-      expect(container).toBeTruthy();
+      const { root } = render(<Card>{''}</Card>);
+      expect(root).toBeTruthy();
     });
 
     it('should handle very nested content', () => {

@@ -250,7 +250,7 @@ describe('OrderScreen', () => {
 
   describe('Accessibility', () => {
     it('should have proper accessibility labels for products', async () => {
-      const { queryByAccessibilityLabel } = renderWithProvider(<OrderScreen />);
+      const { queryByLabelText } = renderWithProvider(<OrderScreen />);
 
       await waitFor(() => {
         // Check for product accessibility labels
@@ -258,15 +258,15 @@ describe('OrderScreen', () => {
     });
 
     it('should have proper accessibility labels for buttons', async () => {
-      const { queryByAccessibilityLabel } = renderWithProvider(<OrderScreen />);
+      const { queryByLabelText } = renderWithProvider(<OrderScreen />);
 
       await waitFor(() => {
-        expect(queryByAccessibilityLabel('Complete order')).toBeTruthy();
+        expect(queryByLabelText('Complete order')).toBeTruthy();
       });
     });
 
     it('should have accessibility labels for category tabs', async () => {
-      const { queryByAccessibilityLabel } = renderWithProvider(<OrderScreen />);
+      const { queryByLabelText } = renderWithProvider(<OrderScreen />);
 
       await waitFor(() => {
         // Check for category accessibility labels

@@ -202,7 +202,7 @@ describe('HistoryScreen', () => {
     });
 
     it('should have proper accessibility label for reset button', async () => {
-      const { queryByAccessibilityLabel } = renderWithProvider(
+      const { queryByLabelText } = renderWithProvider(
         <HistoryScreen />
       );
 
@@ -282,7 +282,7 @@ describe('HistoryScreen', () => {
 
   describe('Accessibility', () => {
     it('should have proper accessibility labels for orders', async () => {
-      const { queryByAccessibilityLabel } = renderWithProvider(
+      const { queryByLabelText } = renderWithProvider(
         <HistoryScreen />
       );
 
